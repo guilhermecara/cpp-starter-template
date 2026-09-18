@@ -1,0 +1,32 @@
+{
+    "version": 8,
+    "configurePresets": [
+        {
+            "name": "preset-clang",
+            "displayName": "Clang 22.1.8 x86_64-pc-linux-gnu",
+            "description": "Using compilers: C = /usr/sbin/clang, CXX = /usr/sbin/clang++",
+            "binaryDir": "${sourceDir}/out/build/${presetName}",
+            "cacheVariables": {
+                "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}",
+                "CMAKE_C_COMPILER": "/usr/sbin/clang",
+                "CMAKE_CXX_COMPILER": "/usr/sbin/clang++",
+                "CMAKE_BUILD_TYPE": "Debug"
+            }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "preset-clang",
+            "configurePreset": "preset-clang"
+        }
+    ],
+    "testPresets": [
+        {
+            "name": "preset-clang",
+            "configurePreset": "preset-clang",
+            "output": {
+                "outputOnFailure": true
+            }
+        }
+    ]
+}

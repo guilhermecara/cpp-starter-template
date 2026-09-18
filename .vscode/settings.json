@@ -1,0 +1,4 @@
+{
+    "cmake.preset": "preset-clang",
+    "editor.formatOnSave": true
+}
